@@ -3,6 +3,7 @@ package es.avalon.bo;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -10,7 +11,9 @@ import javax.persistence.Id;
 public class Noticia implements Serializable{
 
 	@Id
+	@Column( length = 40, unique = true )
 	private String titulo;
+	@Column( length = 40)
 	private String autor;
 	private Date fecha;
 

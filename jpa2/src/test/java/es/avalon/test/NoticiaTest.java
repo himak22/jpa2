@@ -1,5 +1,6 @@
 package es.avalon.test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
@@ -26,6 +27,12 @@ public class NoticiaTest {
 	@Test
 	public void entityManagerFactoryOK() {
 		assertNotNull(emf);
+	}
+	
+	@Test
+	public void seleccionarNoticiaInicial() {
+		Noticia noticia= em.find(Noticia.class, "java 9 ha salido");
+		assertEquals("cecilio",noticia.getAutor());
 	}
 	
 	@Test
